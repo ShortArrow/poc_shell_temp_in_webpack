@@ -18,6 +18,28 @@ Because, these are get undefined by import syntax.
 `asset/source` has not my expected behavior.
 After verification. I was reach these idea.
 
+### Point
+
+This is a part of auto genarated `dist/extension.js`.
+Using `testtext_txt_1.default`, but default has undefined.
+
+```js
+/***/ }),
+/* 2 */
+/***/ ((module) => {
+
+module.exports = "Hello text data raw binding to literal\r\n";
+
+/***/ }),
+/* 3 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const testtext_txt_1 = __webpack_require__(2);
+exports["default"] = testtext_txt_1.default
+```
+
 This `dist/extension.js` generation and have not `default` is expected behavior?
 I think better as like as bellow.
 Or, my `webpack.config.js` or `tsconfig.json` are mistaking?
