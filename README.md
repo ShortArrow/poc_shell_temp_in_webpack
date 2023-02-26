@@ -5,6 +5,7 @@ This is PoC of develop vscode extension.
 ## Features
 
 This is a minimal configuration to confirm that a text file can be imported as a literal string in TypeScript.
+Using [Source assets](https://webpack.js.org/guides/asset-modules/#source-assets).
 
 - Commands
   - `> PoC Shell Temp: Hello World`
@@ -13,7 +14,7 @@ This is a minimal configuration to confirm that a text file can be imported as a
   
 ## Main Issue
 
-Commands of this extension has fail. 
+Commands of this extension has fail.
 Because, these are get undefined by import syntax.
 `asset/source` has not my expected behavior.
 After verification. I was reach these idea.
