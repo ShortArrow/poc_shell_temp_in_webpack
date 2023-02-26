@@ -10,6 +10,30 @@ This is a minimal configuration to confirm that a text file can be imported as a
   - `> PoC Shell Temp: Hello World`
   - `> PoC Shell Temp: Load text`
   - `> PoC Shell Temp: Load from mod`
+  
+## Main Issue
+
+Commands of this extension has fail. 
+Because, these are get undefined by import syntax.
+`asset/source` has not my expected behavior.
+After verification. I was reach these idea.
+
+This `dist/extension.js` generation and have not `default` is expected behavior?
+I think better as like as bellow.
+Or, my `webpack.config.js` or `tsconfig.json` are mistaking?
+
+### Actual
+
+```js
+module.exports = "Hello text data raw binding to literal\r\n";
+```
+
+### Expect
+
+```js
+module.exports.default = "Hello text data raw binding to literal\r\n";
+// or module.exports = { default: "Hello text data raw binding to literal\r\n"};
+```
       
 ## Requirements
 
