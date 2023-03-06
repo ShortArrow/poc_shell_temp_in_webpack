@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import testtext from '../assets/testtext.txt';
-import content from './load_assets';
+import testtext from 'raw-loader!../assets/testtext.txt';
+import shelltemp from 'raw-loader!../assets/testpwsh.ps1';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -15,9 +15,9 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.showInformationMessage(testtext);
   });
 
-  let disposable2 = vscode.commands.registerCommand('poc-shell-temp-in-webpack.fromMod', () => {
-    console.log(content);
-    vscode.window.showInformationMessage(content);
+  let disposable2 = vscode.commands.registerCommand('poc-shell-temp-in-webpack.loadShell', () => {
+    console.log(shelltemp);
+    vscode.window.showInformationMessage(shelltemp);
   });
 
   context.subscriptions.push(disposable0,disposable1,disposable2);

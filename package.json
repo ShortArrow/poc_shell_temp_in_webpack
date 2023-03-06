@@ -22,8 +22,8 @@
         "title": "PoC Shell Temp: Load text"
       },
       {
-        "command": "poc-shell-temp-in-webpack.fromMod",
-        "title": "PoC Shell Temp: Load from mod"
+        "command": "poc-shell-temp-in-webpack.loadShell",
+        "title": "PoC Shell Temp: Load from shell script"
       }
     ]
   },
@@ -32,11 +32,11 @@
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
+    "compile-tests": "webpack -c webpack.config.test.js",
+    "watch-tests": "yarn run compile-tests -w",
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test.js"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
@@ -49,6 +49,8 @@
     "eslint": "^8.34.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
+    "mocha-webpack": "^1.1.0",
+    "raw-loader": "^4.0.2",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.5",
     "webpack": "^5.75.0",
