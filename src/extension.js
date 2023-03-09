@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import testtext from '../assets/testtext.txt';
-import content from './load_assets';
+import content from './load_assets.js';
 
 export function activate(context: vscode.ExtensionContext) {
 

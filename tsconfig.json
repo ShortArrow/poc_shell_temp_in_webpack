@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
+		"module": "Node16",
+		"moduleResolution": "node16",
 		"target": "ES2020",
 		"lib": [
 			"ES2020"
@@ -16,6 +17,11 @@
 		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
 		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
 	},
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true,
+		"experimentalResolver": true
+	}
 	// "include": [
 	// 	"src",
 	// 	"webpack.config.js"

@@ -4,13 +4,16 @@
   "description": "poc_shell_temp_in_webpack",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.75.0"
+    "vscode": "^1.75.0",
+    "node": ">=14.16"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [],
-  "main": "./dist/extension.js",
+  "exports": "./dist/extension.js",
+  "type": "module",
+  "ts-esm": "node --loader ts-node/esm",
   "contributes": {
     "commands": [
       {
