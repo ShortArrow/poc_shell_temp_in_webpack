@@ -22,8 +22,16 @@
         "title": "PoC Shell Temp: Load text"
       },
       {
+        "command": "poc-shell-temp-in-webpack.shellTemp",
+        "title": "PoC Shell Temp: Load shell template"
+      },
+      {
         "command": "poc-shell-temp-in-webpack.fromMod",
         "title": "PoC Shell Temp: Load from mod"
+      },
+      {
+        "command": "poc-shell-temp-in-webpack.shellTempFromMod",
+        "title": "PoC Shell Temp: Load shell template from mod"
       }
     ]
   },
@@ -40,13 +48,15 @@
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
+    "@types/jest": "^29.4.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "18.14.1",
     "@types/vscode": "^1.75.0",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
-    "@vscode/test-electron": "^2.2.3",
+    "@vscode/test-electron": "^2.3.0",
     "eslint": "^8.34.0",
+    "esm": "^3.2.25",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
     "ts-loader": "^9.4.2",

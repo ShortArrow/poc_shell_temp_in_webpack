@@ -1,3 +1,6 @@
-import content from '../assets/testtext.txt';
+import textContent from "../assets/testtext.txt";
+import shellTemplate from "../assets/testpwsh.ps1";
 
-export default content;
+export const modText = "Mod : " + textContent;
+export const modShellTemp = "Mod : " + shellTemplate;
+export default modText;

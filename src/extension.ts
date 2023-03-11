@@ -1,26 +1,48 @@
-import * as vscode from 'vscode';
-import testtext from '../assets/testtext.txt';
-import content from './load_assets';
+import * as vscode from "vscode";
+import textContent from "../assets/testtext.txt";
+import shellTemplate from "../assets/testpwsh.ps1";
+import { modText, modShellTemp } from "./load_assets";
 
 export function activate(context: vscode.ExtensionContext) {
+  console.log(
+    'Congratulations, your extension "poc-shell-temp-in-webpack" is now active!'
+  );
 
-  console.log('Congratulations, your extension "poc-shell-temp-in-webpack" is now active!');
-
-  let disposable0 = vscode.commands.registerCommand('poc-shell-temp-in-webpack.helloWorld', () => {
-    vscode.window.showInformationMessage('Hello World from poc_shell_temp_in_webpack!');
-  });
-
-  let disposable1 = vscode.commands.registerCommand('poc-shell-temp-in-webpack.loadText', () => {
-    console.log(testtext);
-    vscode.window.showInformationMessage(testtext);
-  });
-
-  let disposable2 = vscode.commands.registerCommand('poc-shell-temp-in-webpack.fromMod', () => {
-    console.log(content);
-    vscode.window.showInformationMessage(content);
-  });
-
-  context.subscriptions.push(disposable0,disposable1,disposable2);
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "poc-shell-temp-in-webpack.helloWorld",
+      () => {
+        vscode.window.showInformationMessage(
+          "Hello World from poc_shell_temp_in_webpack!"
+        );
+      }
+    ),
+    vscode.commands.registerCommand(
+      "poc-shell-temp-in-webpack.loadText",
+      () => {
+        console.log(textContent);
+        vscode.window.showInformationMessage(textContent);
+      }
+    ),
+    vscode.commands.registerCommand(
+      "poc-shell-temp-in-webpack.shellTemp",
+      () => {
+        console.log(shellTemplate);
+        vscode.window.showInformationMessage(shellTemplate);
+      }
+    ),
+    vscode.commands.registerCommand("poc-shell-temp-in-webpack.fromMod", () => {
+      console.log(modText);
+      vscode.window.showInformationMessage(modText);
+    }),
+    vscode.commands.registerCommand(
+      "poc-shell-temp-in-webpack.shellTempFromMod",
+      () => {
+        console.log(modShellTemp);
+        vscode.window.showInformationMessage(modShellTemp);
+      }
+    )
+  );
 }
 
-export function deactivate() { }
+export function deactivate() {}
